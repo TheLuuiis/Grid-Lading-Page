@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --text: hsl(0, 0%, 100%);
-    --cyan: hsl(198, 60%, 50%);
-    --blueInside: hsl(176, 68%, 64%);
+    --textWhite: hsl(0, 0%, 100%);
+    --borderWhite: hsl(0, 0%, 100%);
+    --fontFamily: "Inter", sans-serif;
+    --mainBackground: hsl(228, 99%, 58%);
     --backgroundWhite: hsl(0, 0%, 100%);
-    --background: hsl(217, 28%, 15%);
-    --mainBackground: hsl(218, 28%, 13%);
-    --footerBackground: hsl(216, 53%, 9%);
-    --testimonialsBacground: hsl(219, 30%, 18%);
-    --fontFamily: "Raleway", sans-serif;
-    --layout-max: 1680px;
-    --content-max: 1280px;
 }
 
 * {
@@ -28,26 +22,8 @@ body {
     overflow-x: hidden;
 }
 
-#root {
+.app {
     width: 100%;
-}
-
-img,
-svg {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.container__app {
-    width: 100%;
-    min-height: 100%;
-}
-
-.container__all {
-    width: 100%;
-    max-width: var(--layout-max);
-    margin: 0 auto;
-    position: relative;
+    height: 100vh;
     background-color: var(--mainBackground);
 }
