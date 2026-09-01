@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --text: hsl(0, 0%, 100%);
+    --cyan: hsl(198, 60%, 50%);
+    --blueInside: hsl(176, 68%, 64%);
+    --backgroundWhite: hsl(0, 0%, 100%);
+    --background: hsl(217, 28%, 15%);
+    --mainBackground: hsl(218, 28%, 13%);
+    --footerBackground: hsl(216, 53%, 9%);
+    --testimonialsBacground: hsl(219, 30%, 18%);
+    --fontFamily: "Raleway", sans-serif;
+    --layout-max: 1680px;
+    --content-max: 1280px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fontFamily);
+    background-color: var(--background);
+    min-height: 100vh;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container__app {
+    width: 100%;
+    min-height: 100%;
+}
+
+.container__all {
+    width: 100%;
+    max-width: var(--layout-max);
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--mainBackground);
+}
