@@ -1,57 +1,66 @@
 main {
     width: 100%;
-    height: 750px;
-    display: flex;
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
 }
 
 .container__class {
     width: 100%;
-    max-width: 45%;
-    height: 100%;
+    max-width: none;
+    min-height: clamp(360px, 55vw, 760px);
     display: flex;
-    padding: 20px 40px;
+    padding: clamp(32px, 4vw, 56px) clamp(20px, 3vw, 40px);
     justify-content: start;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .description__class {
-    width: 450px;
+    width: min(100%, 34rem);
     height: auto;
 }
 
 .description__class h1 {
     color: var(--textWhite);
-    font-size: 66px;
+    font-size: clamp(3rem, 1.7rem + 3.8vw, 4.75rem);
     font-weight: 500;
     text-align: start;
-    margin: 0px 0px 30px;
+    margin: 0 0 24px;
     line-height: 1.1;
+    text-wrap: balance;
 }
 
 .description__class p {
     color: var(--textWhite);
-    font-size: 17px;
+    font-size: clamp(1rem, 0.93rem + 0.2vw, 1.0625rem);
     font-weight: 300;
     text-align: start;
     line-height: 1.5;
-    max-width: 400px;
+    max-width: 28rem;
 }
 
 .container__cards {
-    width: 55%;
-    height: 100%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(220px, 1fr);
 }
 
 .card {
-    padding: 30px;
+    min-width: 0;
+    padding: clamp(24px, 3vw, 32px);
     display: flex;
+    cursor: pointer;
     flex-direction: column;
+    gap: 48px;
     justify-content: space-between;
+    transition: .3s ease-in-out;
     border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .info {
@@ -64,7 +73,7 @@ main {
 
 .info h2 {
     color: var(--textWhite);
-    font-size: 36px;
+    font-size: clamp(1.9rem, 1.2rem + 1.4vw, 2.5rem);
     font-weight: 500;
     text-align: end;
 }
@@ -76,14 +85,104 @@ main {
 
 .description__card h3 {
     color: var(--textWhite);
+    font-size: clamp(1.1rem, 1rem + 0.3vw, 1.25rem);
     font-weight: 500;
     text-align: start;
-    margin: 0px 0px 1px;
+    margin: 0 0 4px;
 }
 
 .description__card p {
     color: var(--textWhite);
-    font-size: 15px;
+    font-size: clamp(0.95rem, 0.9rem + 0.1vw, 1rem);
     font-weight: 300;
     text-align: start;
+    max-width: 24rem;
+}
+
+@media (min-width: 1600px) {
+    main {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    }
+
+    .container__class {
+        min-height: 760px;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .description__class {
+        width: min(100%, 30rem);
+    }
+}
+
+@media (max-width: 980px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .container__class {
+        min-height: auto;
+        border-bottom: none;
+    }
+
+    .container__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .container__class {
+        padding: 28px 20px;
+    }
+
+    .description__class h1 {
+        margin-bottom: 20px;
+    }
+
+    .container__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 420px) {
+    .container__class {
+        padding: 24px 16px;
+    }
+
+    .description__class p {
+        max-width: none;
+    }
+
+    .card {
+        padding: 20px 16px;
+        gap: 24px;
+    }
+
+    .info {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .info img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 300px) {
+    .description__class h1 {
+        font-size: 2.35rem;
+    }
+
+    .info {
+        flex-direction: column;
+    }
 }

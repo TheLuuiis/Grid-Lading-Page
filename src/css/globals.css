@@ -16,14 +16,22 @@
 
 body {
     font-family: var(--fontFamily);
-    background-color: var(--background);
+    background-color: var(--mainBackground);
     min-height: 100vh;
     line-height: 1.4;
     overflow-x: hidden;
+    color: var(--textWhite);
 }
 
 .app {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: var(--mainBackground);
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
